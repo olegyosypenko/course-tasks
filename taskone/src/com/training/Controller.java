@@ -1,4 +1,4 @@
-package com.task1;
+package com.training;
 
 import java.util.Scanner;
 
