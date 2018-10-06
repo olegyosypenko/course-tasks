@@ -1,4 +1,4 @@
-package com.training;
+package ua.training;
 
 import java.util.Scanner;
 
