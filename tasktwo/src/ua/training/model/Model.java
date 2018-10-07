@@ -35,14 +35,14 @@ public class Model {
 
     public void makeNewAttempt(int number) {
         if(number == numberToGuess) {
-           this.state = State.WIN;
+           this.state = State.EQUAL;
         } else if(number < this.numberToGuess) {
             this.min = ++number;
-            this.state = State.LESS;
+            this.state = State.SMALLER;
             this.countLess++;
         } else {
             this.max = --number;
-            this.state = State.MORE;
+            this.state = State.BIGGER;
             this.countMore++;
         }
     }
@@ -60,10 +60,10 @@ public class Model {
     }
 
     public int getMin() {
-        return min;
+        return this.min;
     }
 
     public int getMax() {
-        return max;
+        return this.max;
     }
 }

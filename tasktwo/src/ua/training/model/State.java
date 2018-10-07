@@ -2,19 +2,19 @@ package ua.training.model;
 import static ua.training.constants.Constants.*;
 
 public enum State {
-    LESS {
+    SMALLER {
         @Override
         public String toString() {
-            return LESS_RESULT;
+            return SMALLER_MESSAGE;
         }
     },
-    MORE {
+    BIGGER {
         @Override
         public String toString() {
-            return BIGGER_RESULT;
+            return BIGGER_MESSAGE;
         }
     },
-    WIN {
+    EQUAL {
         @Override
         public String toString() {
             return CONGRATS;

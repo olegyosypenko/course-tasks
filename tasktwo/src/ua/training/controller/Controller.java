@@ -20,7 +20,7 @@ public class Controller {
 
 
     public void gameLoop() {
-        while(this.model.getState() != State.WIN) {
+        while(this.model.getState() != State.EQUAL) {
             int number = getNumber();
             if(this.model.isNumberInRange(number)) {
                 this.view.printNumberOutOfRangeError();
@@ -35,10 +35,10 @@ public class Controller {
     private int getNumber() {
         this.view.askForInput(this.model.getMin(), this.model.getMax());
         boolean hasNextInt = false;
-        while( !hasNextInt) {
+        while(!hasNextInt) {
             hasNextInt = this.scanner.hasNextInt();
             if(!hasNextInt) {
-                this.view.printErrorMessage();
+                this.view.printStringInputError();
                 this.view.askForInput(this.model.getMin(), this.model.getMax());
                 this.scanner.next();
             }

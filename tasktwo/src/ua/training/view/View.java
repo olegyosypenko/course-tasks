@@ -4,23 +4,20 @@ import static ua.training.constants.Constants.*;
 
 public class View {
 
-
-    public void printErrorMessage() {
-        System.err.println(ERROR_MESSAGE);
+    private void printError(String message) {
+        System.err.println(message);
         try {
             Thread.sleep(20);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
     }
-    public void printNumberOutOfRangeError() {
 
-        System.err.println(OUT_OF_RANGE_ERROR_MESSAGE);
-        try {
-            Thread.sleep(20);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+    public void printStringInputError() {
+        this.printError(STRING_INPUT_ERROR);
+    }
+    public void printNumberOutOfRangeError() {
+        this.printError(OUT_OF_RANGE_ERROR_MESSAGE);
     }
 
     public void askForInput(int min, int max) {
