@@ -3,21 +3,24 @@ package ua.training;
 public class Model {
 
     public static final String SPACE = " ";
-    public static final String EXCLAMATION_MARK = "!";
     public static final String HELLO = "Hello";
-    public static final String WORLD = "world";
+    public static final String WORLD = "world!";
 
     private StringBuilder message;
     private String[] requirements;
 
     public Model() {
         this.message = new StringBuilder();
-        this.requirements = {HELLO, WORLD};
+        this.requirements = new String[]{HELLO, WORLD};
     }
 
 
     public void addWordToOurMessage(String word) {
-        this.message.append(word).append(SPACE);
+        if (message.length() == 0) {
+            this.message.append(word);
+        } else {
+            this.message.append(SPACE).append(word);
+        }
     }
 
     public String getMessage() {
