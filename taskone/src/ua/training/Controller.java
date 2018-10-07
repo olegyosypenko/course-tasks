@@ -19,8 +19,10 @@ public class Controller {
     }
 
     public void process() {
-        this.model.addWordToOurMessage(getInputEqualTo(FIRST_WORD));
-        this.model.addLastWordToOurMessage(getInputEqualTo(SECOND_WORD));
+        String[] requirements = this.model.getRequirements();
+        for(String str : requirements) {
+            this.model.addWordToOurMessage(getInputEqualTo(FIRST_WORD));
+        }
         this.view.printMessage(this.model.getMessage());
     }
 
