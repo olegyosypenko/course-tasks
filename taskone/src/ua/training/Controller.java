@@ -18,8 +18,8 @@ public class Controller {
 
     public void process() {
         String[] requirements = this.model.getRequirements();
-        for(String str : requirements) {
-            this.model.addWordToOurMessage(getInputEqualTo(str));
+        for(String requirement : requirements) {
+            this.model.addWordToOurMessage(getInputEqualTo(requirement));
         }
         this.view.printMessage(this.model.getMessage());
     }
