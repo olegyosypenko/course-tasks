@@ -5,7 +5,7 @@ public class Constants {
     public static final int RAND_MAX = 100;
     public static final int MIN = 0;
     public static final int MAX = 100;
-    public static final String STRING_INPUT_ERROR = "You entered a string. Please, try again!";
+    public static final String STRING_INPUT_ERROR_MESSAGE = "You entered a string. Please, try again!";
     public static final String OUT_OF_RANGE_ERROR_MESSAGE = "You entered a number out of range. Please, try again!";
     public static final String REQUEST_FOR_INPUT = "Enter number from %d to %d%n";
     public static final String CONGRATS = "You won congratulations";

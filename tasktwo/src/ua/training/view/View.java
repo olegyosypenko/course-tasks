@@ -14,8 +14,9 @@ public class View {
     }
 
     public void printStringInputError() {
-        this.printError(STRING_INPUT_ERROR);
+        this.printError(STRING_INPUT_ERROR_MESSAGE);
     }
+
     public void printNumberOutOfRangeError() {
         this.printError(OUT_OF_RANGE_ERROR_MESSAGE);
     }
