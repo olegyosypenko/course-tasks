@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8eda8ba9-2302-4148-9f4d-39d7249fe9d9" name="Default" comment="">
+    <list default="true" id="8eda8ba9-2302-4148-9f4d-39d7249fe9d9" name="Default" comment="refactor addWordToOurMessage method">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/taskone/src/ua/training/Model.java" afterPath="$PROJECT_DIR$/taskone/src/ua/training/Model.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/taskone/src/ua/training/Controller.java" afterPath="$PROJECT_DIR$/taskone/src/ua/training/Controller.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -28,11 +28,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Model.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Model.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/taskone/src/ua/training/Model.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="289">
-              <caret line="17" column="35" lean-forward="false" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="35" />
+              <caret line="17" column="5" lean-forward="false" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -48,11 +48,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Controller.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Controller.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/taskone/src/ua/training/Controller.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="578">
-              <caret line="34" column="29" lean-forward="false" selection-start-line="34" selection-start-column="29" selection-end-line="34" selection-end-column="29" />
+            <state relative-caret-position="306">
+              <caret line="18" column="23" lean-forward="false" selection-start-line="18" selection-start-column="16" selection-end-line="18" selection-end-column="23" />
               <folding />
             </state>
           </provider>
@@ -167,8 +167,8 @@
         <option value="$PROJECT_DIR$/tasktwo/src/ua/training/model/Model.java" />
         <option value="$PROJECT_DIR$/tasktwo/src/ua/training/constants/Constants.java" />
         <option value="$PROJECT_DIR$/tasktwo/src/ua/training/view/View.java" />
-        <option value="$PROJECT_DIR$/taskone/src/ua/training/Controller.java" />
         <option value="$PROJECT_DIR$/taskone/src/ua/training/Model.java" />
+        <option value="$PROJECT_DIR$/taskone/src/ua/training/Controller.java" />
       </list>
     </option>
   </component>
@@ -479,7 +479,14 @@
       <option name="project" value="LOCAL" />
       <updated>1538912774158</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="refactor addWordToOurMessage method">
+      <created>1538912942326</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1538912942327</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -552,7 +559,8 @@
     <MESSAGE value="refactor model" />
     <MESSAGE value="refactor controller" />
     <MESSAGE value="delete addLastWordToOurMessage method from Model" />
-    <option name="LAST_COMMIT_MESSAGE" value="delete addLastWordToOurMessage method from Model" />
+    <MESSAGE value="refactor addWordToOurMessage method" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor addWordToOurMessage method" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -733,14 +741,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/taskone/src/ua/training/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="32" lean-forward="false" selection-start-line="7" selection-start-column="32" selection-end-line="7" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tasktwo/src/ua/training/view/View.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
@@ -752,10 +752,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/taskone/src/ua/training/Controller.java">
+    <entry file="file://$PROJECT_DIR$/taskone/src/ua/training/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="578">
-          <caret line="34" column="29" lean-forward="false" selection-start-line="34" selection-start-column="29" selection-end-line="34" selection-end-column="29" />
+        <state relative-caret-position="119">
+          <caret line="7" column="32" lean-forward="false" selection-start-line="7" selection-start-column="32" selection-end-line="7" selection-end-column="32" />
           <folding />
         </state>
       </provider>
@@ -763,7 +763,15 @@
     <entry file="file://$PROJECT_DIR$/taskone/src/ua/training/Model.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
-          <caret line="17" column="35" lean-forward="false" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="35" />
+          <caret line="17" column="5" lean-forward="false" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/taskone/src/ua/training/Controller.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="23" lean-forward="false" selection-start-line="18" selection-start-column="16" selection-end-line="18" selection-end-column="23" />
           <folding />
         </state>
       </provider>

@@ -4,8 +4,6 @@ import java.util.Scanner;
 
 public class Controller {
 
-    public static final String FIRST_WORD = "Hello";
-    public static final String SECOND_WORD = "world!";
     public static final String EMPTY_STRING = "";
 
     private View view;
@@ -21,7 +19,7 @@ public class Controller {
     public void process() {
         String[] requirements = this.model.getRequirements();
         for(String str : requirements) {
-            this.model.addWordToOurMessage(getInputEqualTo(FIRST_WORD));
+            this.model.addWordToOurMessage(getInputEqualTo(str));
         }
         this.view.printMessage(this.model.getMessage());
     }
