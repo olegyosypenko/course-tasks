@@ -20,10 +20,6 @@ public class Model {
         this.message.append(word).append(SPACE);
     }
 
-    public void addLastWordToOurMessage(String word) {
-        this.message.append(word).append(EXCLAMATION_MARK);
-    }
-
     public String getMessage() {
         return this.message.toString();
     }
