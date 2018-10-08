@@ -18,7 +18,7 @@ public class Controller {
 
     public void process() {
         String[] requirements = this.model.getRequirements();
-        for(String requirement : requirements) {
+        for (String requirement : requirements) {
             this.model.addWordToOurMessage(getInputEqualTo(requirement));
         }
         this.view.printMessage(this.model.getMessage());
@@ -26,7 +26,7 @@ public class Controller {
 
     public String getInputEqualTo(String word) {
         String input = EMPTY_STRING;
-        while(!word.equals(input)) {
+        while (!word.equals(input)) {
 
             this.view.askForInput(word);
             input = this.scanner.next();

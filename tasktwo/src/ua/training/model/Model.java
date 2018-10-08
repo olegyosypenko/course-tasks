@@ -34,9 +34,9 @@ public class Model {
     }
 
     public void makeNewAttempt(int number) {
-        if(number == numberToGuess) {
+        if (number == numberToGuess) {
            this.state = State.EQUAL;
-        } else if(number < this.numberToGuess) {
+        } else if (number < this.numberToGuess) {
             this.min = ++number;
             this.state = State.SMALLER;
             this.countLess++;
