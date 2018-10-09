@@ -4,7 +4,8 @@ public class Model {
 
     public static final String SPACE = " ";
     public static final String HELLO = "Hello";
-    public static final String WORLD = "world!";
+    public static final String WORLD = "world";
+    public static final String EXCLEMATION_MARK = "!";
 
     private StringBuilder message;
     private String[] requirements;
@@ -21,6 +22,10 @@ public class Model {
         } else {
             this.message.append(SPACE).append(word);
         }
+    }
+
+    public void finishMessage() {
+        this.message.append(EXCLEMATION_MARK);
     }
 
     public String getMessage() {
