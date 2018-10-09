@@ -27,7 +27,6 @@ public class Controller {
 
     public String getInputEqualTo(String word) {
         String input = EMPTY_STRING;
-        System.out.println("Sd".equalsIgnoreCase("sD"));
         while (!word.equalsIgnoreCase(input)) {
             this.view.askForInput(word);
             input = this.scanner.next();
