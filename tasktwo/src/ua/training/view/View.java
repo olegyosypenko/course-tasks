@@ -1,5 +1,10 @@
 package ua.training.view;
 
+import ua.training.model.AttemptResult;
+import ua.training.model.State;
+
+import java.util.ArrayList;
+
 import static ua.training.constants.Constants.*;
 
 public class View {
@@ -31,5 +36,17 @@ public class View {
 
     public void showStatistic(Object[] objects) {
         System.out.printf(MESSAGE_TO_SHOW_STATISTIC, objects);
+    }
+
+    public void showAttempts(ArrayList<AttemptResult> attempts) {
+        for (AttemptResult attempt : attempts) {
+            String result;
+            if (attempt.getAttemptState().equals(State.EQUAL)) {
+                result = attempt.getAttemptState().name().toLowerCase() + TO;
+            } else {
+                result = attempt.getAttemptState().name().toLowerCase() + THAN;
+            }
+            System.out.printf(MESSAGE_TO_SHOW_ATTEMPT, attempt.getNumber(), result);
+        }
     }
 }

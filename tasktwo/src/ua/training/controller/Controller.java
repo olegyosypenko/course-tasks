@@ -30,6 +30,7 @@ public class Controller {
             }
         }
         this.view.showStatistic(this.model.getStatistics());
+        this.view.showAttempts(this.model.getAttempts());
     }
 
     private int getNumber() {
