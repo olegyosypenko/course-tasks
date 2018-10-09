@@ -21,20 +21,21 @@ public class Controller {
         for (String requirement : requirements) {
             this.model.addWordToOurMessage(getInputEqualTo(requirement));
         }
+        this.model.finishMessage();
         this.view.printMessage(this.model.getMessage());
     }
 
     public String getInputEqualTo(String word) {
         String input = EMPTY_STRING;
-        while (!word.equals(input)) {
-
+        System.out.println("Sd".equalsIgnoreCase("sD"));
+        while (!word.equalsIgnoreCase(input)) {
             this.view.askForInput(word);
             input = this.scanner.next();
-            if (!input.equals(word)) {
+            if (!input.trim().equalsIgnoreCase(word)) {
                 this.view.printErrorMessage();
             }
         }
-        return input;
+        return word;
     }
 
 }
