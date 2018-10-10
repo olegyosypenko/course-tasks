@@ -19,5 +19,5 @@ public class Constants {
     public static final String THAN = " than";
     public static final String ANSI_RESET = "\u001B[0m";
     public static final String ANSI_RED = "\u001B[31m";
-    public static final String SHOW_ATTEMPTS = "Your last attempts:";
+    public static final String SHOW_ATTEMPTS = "Your previous attempts:";
 }
