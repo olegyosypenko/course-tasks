@@ -10,12 +10,7 @@ import static ua.training.constants.Constants.*;
 public class View {
 
     private void printError(String message) {
-        System.err.println(message);
-        try {
-            Thread.sleep(20);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+        System.out.println(ANSI_RED + message + ANSI_RESET);
     }
 
     public void printStringInputError() {

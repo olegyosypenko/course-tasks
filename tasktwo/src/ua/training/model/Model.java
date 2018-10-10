@@ -24,7 +24,7 @@ public class Model {
         this.max = MAX;
         this.countLess = 0;
         this.countMore = 0;
-        attempts = new ArrayList<AttemptResult>();
+        this.attempts = new ArrayList<AttemptResult>();
     }
 
     private int rand(int min, int max) {
@@ -37,7 +37,7 @@ public class Model {
 
     public void makeNewAttempt(int number) {
         AttemptResult attemptResult;
-        if (number == numberToGuess) {
+        if (number == this.numberToGuess) {
             this.state = State.EQUAL;
             attemptResult = new AttemptResult(number, this.state);
         } else if (number < this.numberToGuess) {

@@ -16,4 +16,6 @@ public class Constants {
     public static final String MESSAGE_TO_SHOW_ATTEMPT = "%d was %s the unknown number!%n";
     public static final String TO = " to";
     public static final String THAN = " than";
+    public static final String ANSI_RESET = "\u001B[0m";
+    public static final String ANSI_RED = "\u001B[31m";
 }
