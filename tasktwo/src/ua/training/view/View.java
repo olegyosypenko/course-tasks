@@ -34,6 +34,9 @@ public class View {
     }
 
     public void showAttempts(ArrayList<AttemptResult> attempts) {
+        if (!attempts.isEmpty()) {
+            System.out.println(SHOW_ATTEMPTS);
+        }
         for (AttemptResult attempt : attempts) {
             String result;
             if (attempt.getAttemptState().equals(State.EQUAL)) {

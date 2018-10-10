@@ -2,6 +2,12 @@ package ua.training.model;
 import static ua.training.constants.Constants.*;
 
 public enum State {
+    DEFAULT {
+        @Override
+        public String toString() {
+            return EMPTY_STRING;
+        }
+    },
     SMALLER {
         @Override
         public String toString() {

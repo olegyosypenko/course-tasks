@@ -24,7 +24,8 @@ public class Model {
         this.max = MAX;
         this.countLess = 0;
         this.countMore = 0;
-        this.attempts = new ArrayList<AttemptResult>();
+        this.state = State.DEFAULT;
+        this.attempts = new ArrayList<>();
     }
 
     private int rand(int min, int max) {
