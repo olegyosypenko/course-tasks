@@ -19,17 +19,17 @@ public class Model {
 
     public Model() {
         this.random = new Random();
-        this.numberToGuess = this.rand();
         this.min = MIN;
         this.max = MAX;
+        this.numberToGuess = this.rand(this.min + 1, this.max - 1);
         this.countLess = 0;
         this.countMore = 0;
         this.state = State.DEFAULT;
         this.attempts = new ArrayList<>();
     }
 
-    private int rand(int min, int max) {
-        return min + this.random.nextInt(++max - min);
+    public int rand(int min, int max) {
+        return min + this.random.nextInt(max - min);
     }
 
     private int rand() {
@@ -40,23 +40,21 @@ public class Model {
         AttemptResult attemptResult;
         if (number == this.numberToGuess) {
             this.state = State.EQUAL;
-            attemptResult = new AttemptResult(number, this.state);
         } else if (number < this.numberToGuess) {
             this.state = State.SMALLER;
-            attemptResult = new AttemptResult(number, this.state);
-            this.min = ++number;
+            this.min = number;
             this.countLess++;
         } else {
             this.state = State.BIGGER;
-            attemptResult = new AttemptResult(number, this.state);
-            this.max = --number;
+            this.max = number;
             this.countMore++;
         }
+        attemptResult = new AttemptResult(number, this.state);
         this.attempts.add(attemptResult);
     }
 
     public boolean isNumberInRange(int number) {
-        return number > this.max || number < this.min;
+        return number >= this.max || number <= this.min;
     }
 
     public State getState() {

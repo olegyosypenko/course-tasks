@@ -20,12 +20,21 @@ public class Controller {
 
 
     public void startGame() {
-        while (this.model.getState() != State.EQUAL) {
-            int number = getNumber();
+        this.view.showAttempts(this.model.getAttempts());
+        int number = getNumber();
+
+        while (true) {
+
             if (this.model.isNumberInRange(number)) {
                 this.view.printNumberOutOfRangeError();
             } else {
                 this.model.makeNewAttempt(number);
+                this.view.showAttempts(this.model.getAttempts());
+            }
+            if (this.model.getState() != State.EQUAL) {
+                number = getNumber();
+            } else {
+                break;
             }
         }
         this.view.printMessage(this.model.getState().toString());
@@ -33,20 +42,14 @@ public class Controller {
     }
 
     private int getNumber() {
-        this.view.showAttempts(this.model.getAttempts());
         this.view.askForInput(this.model.getMin(), this.model.getMax());
         if (!this.model.getState().toString().isEmpty()) {
             this.view.printMessage(this.model.getState().toString());
         }
-        boolean hasNextInt = false;
-        while (!hasNextInt) {
-            hasNextInt = this.scanner.hasNextInt();
-            if (!hasNextInt) {
-                this.view.printStringInputError();
-                this.view.showAttempts(this.model.getAttempts());
-                this.view.askForInput(this.model.getMin(), this.model.getMax());
-                this.scanner.next();
-            }
+        while (!this.scanner.hasNextInt()) {
+            this.view.printStringInputError();
+            this.view.askForInput(this.model.getMin(), this.model.getMax());
+            this.scanner.next();
         }
         return this.scanner.nextInt();
     }
