@@ -32,7 +32,7 @@ public class Model {
         return min + this.random.nextInt(max - min);
     }
 
-    private int rand() {
+    public int rand() {
         return this.rand(RAND_MIN, RAND_MAX);
     }
 
@@ -54,7 +54,7 @@ public class Model {
     }
 
     public boolean isNumberInRange(int number) {
-        return number >= this.max || number <= this.min;
+        return number < this.max && number > this.min;
     }
 
     public State getState() {

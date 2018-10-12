@@ -26,10 +26,10 @@ public class Controller {
         while (true) {
 
             if (this.model.isNumberInRange(number)) {
-                this.view.printNumberOutOfRangeError();
-            } else {
                 this.model.makeNewAttempt(number);
                 this.view.showAttempts(this.model.getAttempts());
+            } else {
+                this.view.printNumberOutOfRangeError();
             }
             if (this.model.getState() != State.EQUAL) {
                 number = getNumber();
