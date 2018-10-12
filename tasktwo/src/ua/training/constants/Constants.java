@@ -11,8 +11,8 @@ public class Constants {
     public static final String CONGRATS = "You won congratulations!";
     public static final String SMALLER_MESSAGE = "Last attempt was smaller than the unknown number.";
     public static final String BIGGER_MESSAGE = "Last attempt was bigger than the unknown number.";
-    public static final String MESSAGE_TO_SHOW_STATISTIC = "You entered %d numbers that were bigger than the unknown "
-            + " number and %d numbers that were smaller than the unknown number!%n";
+    public static final String MESSAGE_TO_SHOW_STATISTIC = "You entered %d numbers that were smaller than the unknown "
+            + "number and %d numbers that were bigger than the unknown number!%n";
     public static final String MESSAGE_TO_SHOW_ATTEMPT = "%d was %s the unknown number!%n";
     public static final String EMPTY_STRING = "";
     public static final String TO = " to";
