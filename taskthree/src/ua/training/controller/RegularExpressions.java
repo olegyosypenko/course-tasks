@@ -2,7 +2,7 @@ package ua.training.controller;
 
 public interface RegularExpressions {
     String FIRST_NAME_REGULAR_EXPRESSION = "[A-Z]{1}[a-z]+";
-    String LAST_NAME_REGULAR_EXPRESSION = "[A-Z]{1}[a-z]";
+    String LAST_NAME_REGULAR_EXPRESSION = "[A-Z]{1}[a-z]+";
     String MOBILE_PHONE_REGULAR_EXPRESSION = "[(]{1}[0-9]{3}[)]{1}[0-9]{3}[-]{1}[0-9]{2}[-]{1}[0-9]{2}";
     String NICKNAME_REGULAR_EXPRESSION = "[A-Za-z0-9]{6,15}";
     String EMAIL_REGULAR_EXPRESSION = "[A-Za-z0-9]{2,15}@[A-Za-z0-9]{2,8}.[a-z]{2,4}";
