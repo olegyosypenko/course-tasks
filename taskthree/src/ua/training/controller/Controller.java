@@ -25,11 +25,16 @@ public class Controller implements RegularExpressions, Constants {
         String nickname = getInputThatMatches(NICKNAME_REGULAR_EXPRESSION, NICKNAME_REQUEST);
         String email = getInputThatMatches(EMAIL_REGULAR_EXPRESSION, EMAIL_REQUEST);
         String lastChangeDate = getInputThatMatches(LAST_CHANGE_DATE_REGULAR_EXPRESSION, LAST_CHANGE_DATE_REQUEST);
-
         this.entity.initEntity(firstName, lastName, phoneNumber, group, nickname, email, lastChangeDate);
 
     }
 
+    /**
+     * This function returns string entered in console by user which matches with regularExpression.
+     * @param regularExpression
+     * @param requestMessage
+     * @return
+     */
     private String getInputThatMatches(String regularExpression, String requestMessage) {
         String input = EMPTY_STRING;
         while (!input.matches(regularExpression)) {
@@ -41,15 +46,10 @@ public class Controller implements RegularExpressions, Constants {
         }
         return input;
     }
-    private boolean isAGroup(String group) {
-        try {
-            Group.valueOf(group);
-            return true;
-        } catch (Exception e) {
-            return false;
-        }
-    }
 
+    /**
+     * Creates entity and prints to console.
+     */
     public void processUser() {
         this.createEntity();
         this.view.printMessage(this.entity.toString());

@@ -9,6 +9,17 @@ public class Entity {
     private String email;
     private String date;
 
+
+    /**
+     * Sets all the arguments to this
+     * @param firstName
+     * @param secondName
+     * @param phone
+     * @param group
+     * @param nickName
+     * @param email
+     * @param date
+     */
     public void initEntity(String firstName, String secondName, String phone, String group, String nickName,
                            String email, String date) {
         this.firstName = firstName;
@@ -20,6 +31,10 @@ public class Entity {
         this.date = date;
     }
 
+    /**
+     * Converts entity to String.
+     * @return String
+     */
     @Override
     public String toString() {
         StringBuilder result = new StringBuilder();

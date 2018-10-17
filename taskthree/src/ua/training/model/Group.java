@@ -3,6 +3,10 @@ package ua.training.model;
 public enum Group {
     FIRST, SECOND, THIRD;
 
+    /**
+     * Return RegularExpression to check if word matches any group's name.
+     * @return String
+     */
     public static String getRegular() {
         StringBuilder result = new StringBuilder("(");
         Group[] groups = Group.values();
