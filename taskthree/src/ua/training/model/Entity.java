@@ -1,5 +1,7 @@
 package ua.training.model;
 
+import java.util.Objects;
+
 public class Entity {
     private String firstName;
     private String lastName;
@@ -48,5 +50,18 @@ public class Entity {
         result.append("Last change date: ").append(date).append(";");
 
         return result.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Entity entity = (Entity) o;
+        return Objects.equals(nickName, entity.nickName);
+    }
+
+    @Override
+    public int hashCode() {
+        return this.nickName.hashCode();
     }
 }
