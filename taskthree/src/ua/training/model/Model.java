@@ -16,18 +16,34 @@ public class Model {
         this.entities = new ArrayList<>();
     }
 
-    public void addEntity(String firstName, String secondName, String phone, String group, String nickName,
+    /**
+     * If nickname is taken throws NicknameTakenException else creates an entity.
+     *
+     * @param firstName
+     * @param lastName
+     * @param phone
+     * @param group
+     * @param nickname
+     * @param email
+     * @param date
+     */
+    public void addEntity(String firstName, String lastName, String phone, String group, String nickname,
                           String email, String date) {
+        this.checkNickname(nickname);
         Entity entity = new Entity();
-        entity.initEntity(firstName, secondName, phone, group, nickName, email, date);
+        entity.initEntity(firstName, lastName, phone, group, nickname, email, date);
         this.entities.add(entity);
     }
 
+    /**
+     * Returns entities.
+     * @return
+     */
     public List<Entity> getEntities() {
         return this.entities;
     }
 
-    public void checkNickname(String nickname) {
+    private void checkNickname(String nickname) {
         if (!this.nicknames.add(nickname)) {
             throw new NicknameTakenException();
         }

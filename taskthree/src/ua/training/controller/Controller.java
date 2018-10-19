@@ -2,6 +2,7 @@ package ua.training.controller;
 
 import ua.training.model.Group;
 import ua.training.model.Model;
+import ua.training.model.NicknameTakenException;
 import ua.training.view.View;
 
 import java.util.Scanner;
@@ -17,32 +18,37 @@ public class Controller implements RegularExpressions, Constants {
         this.scanner = new Scanner(System.in);
     }
 
-    private void createEntity() {
+    /**
+     * Creates entity and prints to console.
+     */
+    public void processUser() {
+        this.getAllDataForEntity();
+        this.view.printMessage(this.model.getEntities().get(0).toString());
+    }
+
+    private void getAllDataForEntity() {
         String firstName = getInputThatMatches(FIRST_NAME_REGULAR_EXPRESSION, FIRST_NAME_REQUEST);
         String lastName = getInputThatMatches(LAST_NAME_REGULAR_EXPRESSION, LAST_NAME_REQUEST);
         String phoneNumber = getInputThatMatches(MOBILE_PHONE_REGULAR_EXPRESSION, MOBILE_PHONE_REQUEST);
         String group = getInputThatMatches(Group.getRegular(), GROUP_REQUEST);
+        String nickname = getInputThatMatches(NICKNAME_REGULAR_EXPRESSION, NICKNAME_REQUEST);
         String email = getInputThatMatches(EMAIL_REGULAR_EXPRESSION, EMAIL_REQUEST);
         String lastChangeDate = getInputThatMatches(LAST_CHANGE_DATE_REGULAR_EXPRESSION, LAST_CHANGE_DATE_REQUEST);
-        String nickname = getUnicNickname(NICKNAME_REGULAR_EXPRESSION, NICKNAME_REQUEST);
-        this.model.addEntity(firstName, lastName, phoneNumber, group, nickname, email, lastChangeDate);
+        this.tryToCreateEntity(firstName, lastName, phoneNumber, group, nickname, email, lastChangeDate);
     }
-
-
-    private String getUnicNickname(String regularExpression, String requestMessage)
-    {
-        String nickname;
+    private void tryToCreateEntity(String firstName, String secondName, String phone, String group, String nickname,
+                                   String email, String date) {
         while (true) {
             try {
-                nickname = getInputThatMatches(regularExpression, requestMessage);
-                this.model.checkNickname(nickname);
+                this.model.addEntity(firstName, secondName, phone, group, nickname, email, date);
                 break;
-            } catch (Exception e) {
+            } catch (NicknameTakenException e) {
                 System.out.println(e.getMessage());
+                nickname = getInputThatMatches(NICKNAME_REGULAR_EXPRESSION, NICKNAME_REQUEST);
             }
         }
-        return nickname;
     }
+
     /**
      * This function returns string entered in console by user which matches with regularExpression.
      * @param regularExpression
@@ -59,13 +65,5 @@ public class Controller implements RegularExpressions, Constants {
             }
         }
         return input;
-    }
-
-    /**
-     * Creates entity and prints to console.
-     */
-    public void processUser() {
-        this.createEntity();
-        this.view.printMessage(this.model.getEntities().get(0).toString());
     }
 }
