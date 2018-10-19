@@ -1,4 +1,4 @@
 package ua.training;
 
-public @interface CustomAnnotation {
+@interface CustomAnnotation {
 }

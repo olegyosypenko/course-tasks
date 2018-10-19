@@ -15,5 +15,4 @@ public class DiplomaStudent extends Student{
     public void setDiplomaTheme(String diplomaTheme) {
         this.diplomaTheme = diplomaTheme;
     }
-
 }
