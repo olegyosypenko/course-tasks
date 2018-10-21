@@ -24,17 +24,6 @@ public class Entity {
     }
 
     /**
-     * Sets all the arguments to this
-     * @param firstName
-     * @param secondName
-     * @param phone
-     * @param group
-     * @param nickName
-     * @param email
-     * @param date
-     */
-
-    /**
      * Converts entity to String.
      * @return String
      */

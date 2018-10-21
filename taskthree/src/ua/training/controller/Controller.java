@@ -49,12 +49,6 @@ public class Controller implements RegularExpressions, Constants {
         }
     }
 
-    /**
-     * This function returns string entered in console by user which matches with regularExpression.
-     * @param regularExpression
-     * @param requestMessage
-     * @return
-     */
     private String getInputThatMatches(String regularExpression, String requestMessage) {
         String input = EMPTY_STRING;
         while (!input.matches(regularExpression)) {
