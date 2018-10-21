@@ -12,6 +12,17 @@ public class Entity {
     private String date;
 
 
+    public Entity(String firstName, String secondName, String phone, String group, String nickName,
+                  String email, String date) {
+        this.firstName = firstName;
+        this.lastName = secondName;
+        this.phone = phone;
+        this.group = group;
+        this.nickName = nickName;
+        this.email = email;
+        this.date = date;
+    }
+
     /**
      * Sets all the arguments to this
      * @param firstName
@@ -22,16 +33,6 @@ public class Entity {
      * @param email
      * @param date
      */
-    public void initEntity(String firstName, String secondName, String phone, String group, String nickName,
-                           String email, String date) {
-        this.firstName = firstName;
-        this.lastName = secondName;
-        this.phone = phone;
-        this.group = group;
-        this.nickName = nickName;
-        this.email = email;
-        this.date = date;
-    }
 
     /**
      * Converts entity to String.

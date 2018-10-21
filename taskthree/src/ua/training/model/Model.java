@@ -30,8 +30,7 @@ public class Model {
     public void addEntity(String firstName, String lastName, String phone, String group, String nickname,
                           String email, String date) {
         this.checkNickname(nickname);
-        Entity entity = new Entity();
-        entity.initEntity(firstName, lastName, phone, group, nickname, email, date);
+        Entity entity = new Entity(firstName, lastName, phone, group, nickname, email, date);
         this.entities.add(entity);
     }
 
