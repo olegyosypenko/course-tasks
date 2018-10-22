@@ -23,7 +23,7 @@ public class Entity {
 
     public Entity(String firstName, String secondName, String phone, String group, String nickName,
                   String email, String date) {
-        if (nicknames.add(nickName)) {
+        if (!nicknames.add(nickName)) {
             throw new NicknameTakenException();
         }
         this.firstName = firstName;
