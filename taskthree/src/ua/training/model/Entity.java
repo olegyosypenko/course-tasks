@@ -1,6 +1,8 @@
 package ua.training.model;
 
+import java.util.HashSet;
 import java.util.Objects;
+import java.util.Set;
 
 public class Entity {
     private String firstName;
@@ -10,10 +12,20 @@ public class Entity {
     private String nickName;
     private String email;
     private String date;
+    private static Set<String> nicknames;
+
+    static {
+        nicknames = new HashSet<String>();
+        nicknames.add("qwerty");
+        nicknames.add("asdfgh");
+    }
 
 
     public Entity(String firstName, String secondName, String phone, String group, String nickName,
                   String email, String date) {
+        if (nicknames.add(nickName)) {
+            throw new NicknameTakenException();
+        }
         this.firstName = firstName;
         this.lastName = secondName;
         this.phone = phone;

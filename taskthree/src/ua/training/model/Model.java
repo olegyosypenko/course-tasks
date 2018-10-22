@@ -6,45 +6,35 @@ import java.util.List;
 import java.util.Set;
 
 public class Model {
-    private Set<String> nicknames;
     private List<Entity> entities;
 
     public Model() {
-        this.nicknames = new HashSet<>();
-        this.nicknames.add("qwertyu");
-        this.nicknames.add("asdfghj");
         this.entities = new ArrayList<>();
     }
 
     /**
      * If nickname is taken throws NicknameTakenException else creates an entity.
      *
-     * @param firstName
-     * @param lastName
-     * @param phone
-     * @param group
-     * @param nickname
-     * @param email
-     * @param date
+     * @param firstName first name
+     * @param lastName last name
+     * @param phone phone number
+     * @param group group
+     * @param nickname nickname
+     * @param email email
+     * @param date last date update
      */
     public void addEntity(String firstName, String lastName, String phone, String group, String nickname,
                           String email, String date) {
-        this.checkNickname(nickname);
         Entity entity = new Entity(firstName, lastName, phone, group, nickname, email, date);
         this.entities.add(entity);
     }
 
     /**
      * Returns entities.
-     * @return
+     * @return entities
      */
     public List<Entity> getEntities() {
         return this.entities;
     }
 
-    private void checkNickname(String nickname) {
-        if (!this.nicknames.add(nickname)) {
-            throw new NicknameTakenException();
-        }
-    }
 }
