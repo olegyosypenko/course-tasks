@@ -5,6 +5,10 @@ public class Student {
     private int course;
     private int id;
 
+    public Student() {
+
+    }
+
     public Student(String name, int course, int id) {
         this.name = name;
         this.course = course;
@@ -38,5 +42,9 @@ public class Student {
 
     public void setId(int id) {
         this.id = id;
+    }
+    @CustomAnnotation
+    private void print() {
+        System.out.println(this.name);
     }
 }
