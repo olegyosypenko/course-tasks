@@ -1,6 +1,6 @@
 package ua.training;
 
-public class Student {
+class Student extends Object {
     private String name;
     private int course;
     private int id;

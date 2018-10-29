@@ -2,12 +2,16 @@ package ua.training;
 
 import java.lang.annotation.Annotation;
 import java.lang.reflect.*;
+import java.util.Arrays;
+import java.util.List;
+import java.util.SortedSet;
 
 public class Main{
     public static void main(String ... strs) throws IllegalAccessException, InstantiationException, NoSuchFieldException, NoSuchMethodException, InvocationTargetException {
         Student std = new Student("fds", 12, 23);
         changePrivateField(std);
         invokeMethodsWithAnnotation(std);
+        invokeMethodsWithAnnotation(DiplomaStudent.class);
     }
 
     public static void changePrivateField(Object cc) throws NoSuchFieldException, IllegalAccessException {
@@ -24,10 +28,15 @@ public class Main{
             Annotation[] annotations = m.getAnnotations();
             for (Annotation a : annotations) {
                 if (a.annotationType().getSimpleName().equals(CustomAnnotation.class.getSimpleName())) {
+                    CustomAnnotation an = (CustomAnnotation) a;
+                    System.out.println(an.name());
                     m.setAccessible(true);
                     m.invoke(cc);
                 }
             }
         }
+    }
+    public static void printClassName(Class<?> clazz) {
+        System.out.println(clazz.getName());
     }
 }
