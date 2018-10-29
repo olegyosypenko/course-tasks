@@ -11,7 +11,8 @@ public class Main{
         Student std = new Student("fds", 12, 23);
         changePrivateField(std);
         invokeMethodsWithAnnotation(std);
-        invokeMethodsWithAnnotation(DiplomaStudent.class);
+        printClassName(DiplomaStudent.class);
+        printMethodsAndModifiers(DiplomaStudent.class);
     }
 
     public static void changePrivateField(Object cc) throws NoSuchFieldException, IllegalAccessException {
@@ -28,8 +29,6 @@ public class Main{
             Annotation[] annotations = m.getAnnotations();
             for (Annotation a : annotations) {
                 if (a.annotationType().getSimpleName().equals(CustomAnnotation.class.getSimpleName())) {
-                    CustomAnnotation an = (CustomAnnotation) a;
-                    System.out.println(an.name());
                     m.setAccessible(true);
                     m.invoke(cc);
                 }
@@ -38,5 +37,10 @@ public class Main{
     }
     public static void printClassName(Class<?> clazz) {
         System.out.println(clazz.getName());
+    }
+    public static void printMethodsAndModifiers(Class<?> clazz) {
+        for (Method m : clazz.getDeclaredMethods()) {
+            System.out.println(m.toString());
+        }
     }
 }

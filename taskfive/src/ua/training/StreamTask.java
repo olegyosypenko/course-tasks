@@ -13,7 +13,7 @@ public class StreamTask {
         long amountEqualsZero = list.stream().filter( i1 -> i1 == 0 ).count();
         long amountGreaterThanZero = list.stream().filter( i1 -> i1 > 0 ).count();
         Map.Entry entry = IntStream.range(0, list.size()).boxed()
-                .collect(Collectors.toMap(Function.identity(), i -> list.get(i)))
+                .collect(Collectors.toMap(Function.identity(), list::get))
                 .entrySet().stream().sorted(Comparator.comparingInt(Map.Entry::getValue)).findFirst().get();
         int min = (int) entry.getValue();
         int index = (int) entry.getKey();
