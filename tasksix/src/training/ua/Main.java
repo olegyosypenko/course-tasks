@@ -5,7 +5,7 @@ import java.util.stream.Stream;
 
 public class Main {
     public static void main(String[] args) {
-        Integer[] arr = {1, 7, -5, 4, 1, 7, 7, 1, -5};
+        Integer[] arr = {1, 7, -5, 4, 1, 7, 0, 7, 1, -5};
         System.out.println(getNumberOfSame(arr));
         System.out.println(getNumberOfSameStream(arr));
     }
